@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Predicting Telco User Churn </title>
+</head>
+<body><body>
+    <div>
+        <h1> Predicting Telco User Churn </h1>
+        <form method="POST">
+            <label for="Tenure Type">Contract Type:</label><br>
+                <select name="contract_type" id="contract_type">
+                <option value="Month-to-Month" selected> Month-to-Month</option>
+                <option value="Two Year">Two Year</option>
+                <option value="One Year">One Year</option>
+            </select><br><br>
+
+            <form method="POST">
+                <label for="tenure_months">Tenure Months:</label><br>
+                <input type="number" id="tenure_months" name="tenure_months" value="32"><br><br>
+
+            <form method="POST">
+                <label for="num_dependents">Number of Dependents:</label><br>
+                <input type="number" id="num_dependents" name="num_dependents" value="0"><br><br>
+
+            <form method="POST">
+                <label for="num_referrals">Number of Referrals:</label><br>
+                <input type="number" id="num_referrals" name="num_referrals" value="0"><br><br>
+
+            <form method="POST">
+                <label for="total_monthly_fee">Total Monthly Fee (Rounded):</label><br>
+                <input type="number" id="total_monthly_fee" name="total_monthly_fee" value="64"><br><br>
+            
+            <input type="submit" value="Predict Now!">
+        </form>
+
+        {% if prediction is defined %}
+        <h2>Model Prediction: {{ prediction }}</h2>
+    {% endif %}
+
+</div>
+</body>
+</html>
